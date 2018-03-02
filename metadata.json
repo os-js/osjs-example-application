@@ -1,0 +1,14 @@
+{
+  "name": "MyApplication",
+  "category": null,
+  "title": {
+    "en_EN": "My Application"
+  },
+  "description": {
+    "en_EN": "My Application"
+  },
+  "files": [
+    "index.js",
+    "index.css"
+  ]
+}
