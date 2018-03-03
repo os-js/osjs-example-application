@@ -1,6 +1,7 @@
 {
   "name": "MyApplication",
   "category": null,
+  "server": "server.js",
   "title": {
     "en_EN": "My Application"
   },
