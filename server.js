@@ -38,7 +38,7 @@ const init = async (core, metadata) => {
   });
 
   // WebSocket Route example (see index.js)
-  core.app.ws(`/packages/${metadata._path}/socket`, (ws, req) => {
+  app.ws(`/packages/${metadata._path}/socket`, (ws, req) => {
     ws.send('Hello World');
   });
 };
