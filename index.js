@@ -28,9 +28,7 @@
  * @licence Simplified BSD License
  */
 
-import metadata from './metadata.json';
-
-OSjs.make('osjs/packages').register(metadata, (core, args, options) => {
+OSjs.make('osjs/packages').register('MyApplication', (core, args, options, metadata) => {
 
   const proc = core.make('osjs/application', {
     args,
