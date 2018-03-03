@@ -28,14 +28,18 @@
  * @licence Simplified BSD License
  */
 
+// Creates the internal callback function when OS.js launches an application
+// Note the first argument is the 'name' taken from your metadata.json file
 OSjs.make('osjs/packages').register('MyApplication', (core, args, options, metadata) => {
 
+  // Create a new Application instance
   const proc = core.make('osjs/application', {
     args,
     options,
     metadata
   });
 
+  // Create  a new Window instance
   proc.createWindow({
     id: 'MyApplicationWindow',
     title: metadata.title.en_EN,
@@ -46,6 +50,12 @@ OSjs.make('osjs/packages').register('MyApplication', (core, args, options, metad
   })
     .on('destroy', () => proc.destroy())
     .render();
+
+  // Creates a new WebSocket (see server.js)
+  //proc.socket('/socket');
+
+  // Creates a HTTP call (see server.js)
+  //proc.request('/test');
 
   return proc;
 });

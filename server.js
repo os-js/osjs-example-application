@@ -32,12 +32,12 @@
 const init = async (core, metadata) => {
   const {app} = core;
 
-  // HTTP Route example
-  app.post(`/packages/${metadata._path}/create`, (req, res) => {
+  // HTTP Route example (see index.js)
+  app.post(`/packages/${metadata._path}/test`, (req, res) => {
     res.json({hello: 'World'});
   });
 
-  // WebSocket Route example
+  // WebSocket Route example (see index.js)
   core.app.ws(`/packages/${metadata._path}/socket`, (ws, req) => {
     ws.send('Hello World');
   });
