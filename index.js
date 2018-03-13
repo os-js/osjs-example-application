@@ -43,10 +43,8 @@ OSjs.make('osjs/packages').register('MyApplication', (core, args, options, metad
   proc.createWindow({
     id: 'MyApplicationWindow',
     title: metadata.title.en_EN,
-    state: {
-      dimension: {width: 400, height: 400},
-      position: {left: 700, top: 200}
-    }
+    dimension: {width: 400, height: 400},
+    position: {left: 700, top: 200}
   })
     .on('destroy', () => proc.destroy())
     .render();
