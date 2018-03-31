@@ -29,22 +29,22 @@
  */
 
 // When server initializes
-const init = async (core, metadata) => {
+const init = async (core, proc) => {
   const {app} = core;
 
   // HTTP Route example (see index.js)
-  app.post(`/packages/${metadata._path}/test`, (req, res) => {
+  app.post(proc.resource('/test'), (req, res) => {
     res.json({hello: 'World'});
   });
 
   // WebSocket Route example (see index.js)
-  app.ws(`/packages/${metadata._path}/socket`, (ws, req) => {
+  app.ws(proc.resource('/socket'), (ws, req) => {
     ws.send('Hello World');
   });
 };
 
 // When server starts
-const start = (core, metadata) => {
+const start = (core, proc) => {
 };
 
 // When server goes down
