@@ -28,28 +28,29 @@
  * @licence Simplified BSD License
  */
 
-// When server initializes
-const init = async (core, proc) => {
-  const {app} = core;
-
-  // HTTP Route example (see index.js)
-  app.post(proc.resource('/test'), (req, res) => {
-    res.json({hello: 'World'});
-  });
-
-  // WebSocket Route example (see index.js)
-  app.ws(proc.resource('/socket'), (ws, req) => {
-    ws.send('Hello World');
-  });
-};
-
-// When server starts
-const start = (core, proc) => {
-};
-
-// When server goes down
-const destroy = () => {
-};
-
 // Methods OS.js server requires
-module.exports = {init, start, destroy};
+module.exports = (core, proc) => {
+
+  // When server initializes
+  const init = async () => {
+    const {app} = core;
+
+    // HTTP Route example (see index.js)
+    app.post(proc.resource('/test'), (req, res) => {
+      res.json({hello: 'World'});
+    });
+
+    // WebSocket Route example (see index.js)
+    app.ws(proc.resource('/socket'), (ws, req) => {
+      ws.send('Hello World');
+    });
+  };
+
+  // When server starts
+  const start = () => {};
+
+  // When server goes down
+  const destroy = () => {};
+
+  return {init, start, destroy};
+};
