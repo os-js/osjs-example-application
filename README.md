@@ -12,5 +12,3 @@
 # OS.js v3 Example Package
 
 This is the Example Package for OS.js v3
-
-**PLEASE NOTE THAT THIS IS AN ALPHA PRE-RELEASE AND SUBJECT TO CHANGE WITHOUT NOTICE**
