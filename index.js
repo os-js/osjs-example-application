@@ -50,10 +50,10 @@ OSjs.make('osjs/packages').register('MyApplication', (core, args, options, metad
     .render();
 
   // Creates a new WebSocket (see server.js)
-  //proc.socket('/socket');
+  // proc.socket('/socket');
 
   // Creates a HTTP call (see server.js)
-  //proc.request('/test');
+  // proc.request('/test');
 
   return proc;
 });
