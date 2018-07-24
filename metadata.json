@@ -9,7 +9,7 @@
     "en_EN": "My Application"
   },
   "files": [
-    "index.js",
-    "index.css"
+    "main.js",
+    "main.css"
   ]
 }

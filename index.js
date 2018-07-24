@@ -28,6 +28,8 @@
  * @licence Simplified BSD License
  */
 
+import './index.scss';
+
 // Creates the internal callback function when OS.js launches an application
 // Note the first argument is the 'name' taken from your metadata.json file
 OSjs.make('osjs/packages').register('MyApplication', (core, args, options, metadata) => {
