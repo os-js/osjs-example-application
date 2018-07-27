@@ -49,7 +49,8 @@ OSjs.make('osjs/packages').register('MyApplication', (core, args, options, metad
     position: {left: 700, top: 200}
   })
     .on('destroy', () => proc.destroy())
-    .render();
+    .render()
+    .focus();
 
   // Creates a new WebSocket (see server.js)
   // proc.socket('/socket');
