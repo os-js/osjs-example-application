@@ -1,4 +1,5 @@
 {
+  "type": "application",
   "name": "MyApplication",
   "category": null,
   "server": "server.js",

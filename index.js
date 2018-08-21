@@ -31,16 +31,10 @@
 import './index.scss';
 import metadata from './metadata.json';
 
-// Creates the internal callback function when OS.js launches an application
-// Note the first argument is the 'name' taken from your metadata.json file
-OSjs.make('osjs/packages').register(metadata.name, (core, args, options) => {
-
+// Our launcher
+const register = (core, args, options) => {
   // Create a new Application instance
-  const proc = core.make('osjs/application', {
-    args,
-    options,
-    metadata
-  });
+  const proc = core.make('osjs/application', {args, options, metadata});
 
   // Create  a new Window instance
   proc.createWindow({
@@ -53,10 +47,14 @@ OSjs.make('osjs/packages').register(metadata.name, (core, args, options) => {
     .render();
 
   // Creates a new WebSocket (see server.js)
-  // proc.socket('/socket');
+  //proc.socket('/socket');
 
   // Creates a HTTP call (see server.js)
-  // proc.request('/test');
+  //proc.request('/test')
+  //.then(response => console.log(response));
 
   return proc;
-});
+};
+
+// Creates the internal callback function when OS.js launches an application
+OSjs.make('osjs/packages').register(metadata.name, register);

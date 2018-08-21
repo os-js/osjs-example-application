@@ -29,28 +29,24 @@
  */
 
 // Methods OS.js server requires
-module.exports = (core, proc) => {
+module.exports = (core, proc) => ({
 
   // When server initializes
-  const init = async () => {
-    const {app} = core;
-
+  init: async () => {
     // HTTP Route example (see index.js)
-    app.post(proc.resource('/test'), (req, res) => {
+    core.app.post(proc.resource('/test'), (req, res) => {
       res.json({hello: 'World'});
     });
 
     // WebSocket Route example (see index.js)
-    app.ws(proc.resource('/socket'), (ws, req) => {
+    core.app.ws(proc.resource('/socket'), (ws, req) => {
       ws.send('Hello World');
     });
-  };
+  },
 
   // When server starts
-  const start = () => {};
+  start: () => {},
 
   // When server goes down
-  const destroy = () => {};
-
-  return {init, start, destroy};
-};
+  destroy: () => {},
+});
