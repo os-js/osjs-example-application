@@ -29,10 +29,10 @@
  */
 
 import './index.scss';
-import metadata from './metadata.json';
+import {name as applicationName} from './metadata.json';
 
 // Our launcher
-const register = (core, args, options) => {
+const register = (core, args, options, metadata) => {
   // Create a new Application instance
   const proc = core.make('osjs/application', {args, options, metadata});
 
@@ -57,4 +57,4 @@ const register = (core, args, options) => {
 };
 
 // Creates the internal callback function when OS.js launches an application
-OSjs.make('osjs/packages').register(metadata.name, register);
+OSjs.make('osjs/packages').register(applicationName, register);
