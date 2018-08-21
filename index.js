@@ -29,10 +29,11 @@
  */
 
 import './index.scss';
+import metadata from './metadata.json';
 
 // Creates the internal callback function when OS.js launches an application
 // Note the first argument is the 'name' taken from your metadata.json file
-OSjs.make('osjs/packages').register('MyApplication', (core, args, options, metadata) => {
+OSjs.make('osjs/packages').register(metadata.name, (core, args, options) => {
 
   // Create a new Application instance
   const proc = core.make('osjs/application', {
