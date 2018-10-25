@@ -50,7 +50,7 @@ const register = (core, args, options, metadata) => {
   //proc.socket('/socket');
 
   // Creates a HTTP call (see server.js)
-  //proc.request('/test')
+  //proc.request('/test', {method: 'post'})
   //.then(response => console.log(response));
 
   return proc;
