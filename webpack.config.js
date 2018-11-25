@@ -23,6 +23,9 @@ module.exports = {
   optimization: {
     minimize,
   },
+  externals: {
+    osjs: 'OSjs'
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css',

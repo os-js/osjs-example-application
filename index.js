@@ -29,6 +29,7 @@
  */
 
 import './index.scss';
+import osjs from 'osjs';
 import {name as applicationName} from './metadata.json';
 
 // Our launcher
@@ -57,4 +58,4 @@ const register = (core, args, options, metadata) => {
 };
 
 // Creates the internal callback function when OS.js launches an application
-OSjs.make('osjs/packages').register(applicationName, register);
+osjs.register(applicationName, register);
