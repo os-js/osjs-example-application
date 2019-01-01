@@ -39,6 +39,7 @@ module.exports = (core, proc) => ({
     });
 
     // WebSocket Route example (see index.js)
+    // NOTE: This creates a new connection. You can use a core bound socket instead
     core.app.ws(proc.resource('/socket'), (ws, req) => {
       ws.send('Hello World');
     });
@@ -49,4 +50,9 @@ module.exports = (core, proc) => ({
 
   // When server goes down
   destroy: () => {},
+
+  // When using an internally bound websocket, messages comes here
+  onmessage: (ws, respond, args) => {
+    respond('Pong');
+  }
 });
