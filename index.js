@@ -49,11 +49,11 @@ const register = (core, args, options, metadata) => {
 
   // Creates a new WebSocket connection (see server.js)
   //const sock = proc.socket('/socket');
-  //sock.on('ws:message', ...args => console.log(args))
-  //sock.send('Ping');
+  //sock.on('message', (...args) => console.log(args))
+  //sock.on('open', () => sock.send('Ping'));
 
   // Use the internally core bound websocket
-  //proc.on('ws:message', ...args => console.log(args))
+  //proc.on('ws:message', (...args) => console.log(args))
   //proc.send('Ping')
 
   // Creates a HTTP call (see server.js)
