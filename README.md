@@ -13,6 +13,13 @@
 
 This is the Example Package for OS.js v3
 
+## Installation
+
+```bash
+npm install --save --production @osjs/example-application
+npm run package:discover
+```
+
 ## Contribution
 
 * **Become a [Patreon](https://www.patreon.com/user?u=2978551&ty=h&u=2978551)**
