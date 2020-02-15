@@ -4,10 +4,12 @@
   "category": null,
   "server": "server.js",
   "title": {
-    "en_EN": "My Application"
+    "en_EN": "My Application",
+    "pt_BR": "Minha Aplicação"
   },
   "description": {
-    "en_EN": "My Application"
+    "en_EN": "My Application",
+    "pt_BR": "Minha Aplicação"
   },
   "files": [
     "main.js",
