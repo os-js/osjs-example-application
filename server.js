@@ -29,30 +29,33 @@
  */
 
 // Methods OS.js server requires
-module.exports = (core, proc) => ({
+module.exports = (core, proc) => {
+  const {routeAuthenticated} = core.make('osjs/express');
 
-  // When server initializes
-  init: async () => {
-    // HTTP Route example (see index.js)
-    core.app.post(proc.resource('/test'), (req, res) => {
-      res.json({hello: 'World'});
-    });
+  return {
+    // When server initializes
+    init: async () => {
+      // HTTP Route example (see index.js)
+      routeAuthenticated('POST', proc.resource('/test'), (req, res) => {
+        res.json({hello: 'World'});
+      });
 
-    // WebSocket Route example (see index.js)
-    // NOTE: This creates a new connection. You can use a core bound socket instead
-    core.app.ws(proc.resource('/socket'), (ws, req) => {
-      ws.send('Hello World');
-    });
-  },
+      // WebSocket Route example (see index.js)
+      // NOTE: This creates a new connection. You can use a core bound socket instead
+      core.app.ws(proc.resource('/socket'), (ws, req) => {
+        ws.send('Hello World');
+      });
+    },
 
-  // When server starts
-  start: () => {},
+    // When server starts
+    start: () => {},
 
-  // When server goes down
-  destroy: () => {},
+    // When server goes down
+    destroy: () => {},
 
-  // When using an internally bound websocket, messages comes here
-  onmessage: (ws, respond, args) => {
-    respond('Pong');
-  }
-});
+    // When using an internally bound websocket, messages comes here
+    onmessage: (ws, respond, args) => {
+      respond('Pong');
+    }
+  };
+};
