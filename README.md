@@ -13,6 +13,18 @@
 
 This is the Example Package for OS.js.
 
+## Development
+
+Easily run the application using `docker-compose`:
+
+```bash
+docker compose up
+```
+
+This will run an instance of `OSJS` on port 8000 with your application added to it. Every time anything changes inside the application source code, application will be built with new changes and added inside `OSJS` again.
+
+Also, `config.js` inside `dev` folder is replaced by the `src/server/config.js` inside `OSJS`. If your app requires any specific options based on `config.js`, feel free to add your options and expect `OSJS` to be restarted and considering your options!
+
 ## Installation
 
 ```bash

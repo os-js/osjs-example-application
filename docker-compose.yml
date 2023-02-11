@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  osjs:
+    build:
+      context: .
+      dockerfile: ./dev/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/usr/src/osjs/src/packages/osjs-example-application
+      - ./dev/config.js:/usr/src/osjs/src/server/config.js
+      - /usr/src/osjs/src/packages/osjs-example-application/node_modules
